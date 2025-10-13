@@ -1,0 +1,32 @@
+services:
+  site:
+    # 1. Usando a SUA imagem do site
+    image: thiagoherc/gerador-saudacoes:1.0
+    ports:
+      - "80:80"
+    depends_on:
+      - ms-pessoas-aleatorias
+      - ms-saudacoes-aleatorias
+    networks:
+      - backend
+
+  ms-pessoas-aleatorias:
+    # 2. Usando a SUA imagem de pessoas
+    image: thiagoherc/ms-pessoas-aleatorias:1.0
+    # A porta que este serviço usa é a 8000
+    ports:
+      - "8000:8000"
+    networks:
+      - backend
+
+  ms-saudacoes-aleatorias:
+    # 3. Usando a SUA imagem de saudações
+    image: thiagoherc/ms-saudacoes-aleatorias:1.0
+    # A porta que este serviço usa é a 8080
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+
+networks:
+  backend: {}
