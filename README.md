@@ -30,7 +30,7 @@ O desafio consistiu em criar um ```Dockerfile``` para cada um desses serviços, 
 **✨ Demonstração**
 Abaixo, a aplicação em pleno funcionamento, com o frontend se comunicando com os dois microsserviços de backend para gerar uma saudação completa.
 
-captura-de-tela.png
+![Screenshot da Aplicação](./captura-de-tela.png)
 
 ---
 
